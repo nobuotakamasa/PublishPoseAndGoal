@@ -1,3 +1,7 @@
-# ros2-project-template
+# usage
 
-Project template for ROS2
+python3 publishPose.py
+
+pulish 
+/planning/mission_planning/goal
+/initialpose
