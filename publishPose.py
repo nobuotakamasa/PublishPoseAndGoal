@@ -38,8 +38,8 @@ class PoseSetter(Node):
             if self.__initial_pose_counter <= 5:
                 self.__initial_pose.header.stamp = self.__current_time
                 self.__pub_initial_pose.publish(self.__initial_pose)
-                self.__goal_pose.header.stamp = self.__current_time
-                self.__pub_goal_pose.publish(self.__goal_pose)
+                #self.__goal_pose.header.stamp = self.__current_time
+                #self.__pub_goal_pose.publish(self.__goal_pose)
                 print("publish pose")
             else:
                 rclpy.shutdown()
@@ -57,20 +57,20 @@ class PoseSetter(Node):
 ros2 topic echo /initialpose
 header:
   stamp:
-    sec: 1585897285
-    nanosec: 189880315
+    sec: 1673925375
+    nanosec: 730673409
   frame_id: map
 pose:
   pose:
     position:
-      x: 89566.8359375
-      y: 42297.51953125
+      x: 54491.48828125
+      y: 52935.20703125
       z: 0.0
     orientation:
       x: 0.0
       y: 0.0
-      z: 0.31243059418364677
-      w: 0.9499405896255058
+      z: -0.3251904780142009
+      w: 0.94564853566687
   covariance:
   - 0.25
   - 0.0
@@ -112,13 +112,13 @@ pose:
 def set_initial_pose() -> Optional[PoseWithCovarianceStamped]:
     ros_init_pose = PoseWithCovarianceStamped()
     ros_init_pose.header.frame_id = "map"
-    ros_init_pose.pose.pose.position.x = 89566.8359375
-    ros_init_pose.pose.pose.position.y = 42297.51953125
+    ros_init_pose.pose.pose.position.x = 54491.48828125
+    ros_init_pose.pose.pose.position.y = 52935.20703125
     ros_init_pose.pose.pose.position.z = 0.0
     ros_init_pose.pose.pose.orientation.x = 0.0
     ros_init_pose.pose.pose.orientation.y = 0.0
-    ros_init_pose.pose.pose.orientation.z = 0.31243059418364677
-    ros_init_pose.pose.pose.orientation.w = 0.9499405896255058
+    ros_init_pose.pose.pose.orientation.z = -0.3251904780142009
+    ros_init_pose.pose.pose.orientation.w = 0.94564853566687
     ros_init_pose.pose.covariance = np.array(
             [
                 0.25,
